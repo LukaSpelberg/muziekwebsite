@@ -1,0 +1,389 @@
+/* Reset and base styles */
+
+:root {
+  --heading-color: #1D384A;
+}
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f8fafd;
+  color: #222;
+  line-height: 1.6;
+}
+a {
+  color: #1a5dab;
+  text-decoration: none;
+  font-family: "Figtree", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p {
+  font-family: "Figtree", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1, h2, h3 {
+  font-family: "minion-pro-condensed-display", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--heading-color);
+}
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #0071B8 0%, #002DB9 100%);
+  color: #fff;
+  padding: 0.5em 1.2em;
+  border-radius: 4px;
+  margin-top: 1em;
+  font-size: 1em;
+  transition: background 0.2s;
+}
+
+
+/* Navbar and hero */
+.hero {
+  background: url('images/amstelBanner.jpg') center/cover no-repeat;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+}
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em;
+  position: relative;
+}
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 2.5em;
+  height: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+.menu-icon {
+  width: 2em;
+  height: 0.2em;
+  background: #fff;
+  display: block;
+  position: relative;
+  transition: background 0.3s;
+}
+.menu-icon::before,
+.menu-icon::after {
+  content: '';
+  position: absolute;
+  width: 2em;
+  height: 0.2em;
+  background: #fff;
+  left: 0;
+  transition: transform 0.3s, top 0.3s;
+}
+.menu-icon::before {
+  top: -0.6em;
+}
+.menu-icon::after {
+  top: 0.6em;
+}
+.hero-content {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  height: 100%;
+}
+.hero-content h1 {
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+.hero-content p {
+  font-size: 1.1em;
+  margin-bottom: 2em;
+}
+.scroll-indicator {
+  margin: 2em auto 0;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+
+
+section {
+  background: #E5EEF6;
+  width: 100%;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 1.5em; /* Add horizontal padding */
+}
+section h2 {
+  font-size: 1.3em;
+  margin-bottom: 1em;
+  font-weight: 600;
+}
+.about-img, .lessons-img, .contact-img, .about-story-img, .about-piano-img, .lessons-detail-img, .lessons-feelgood-img, .about3-img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 0;
+  margin: 0 auto 1em auto;
+  display: block;
+}
+.about-text, .lessons-text, .contact-info, .about-story-text, .lessons-detail-text {
+  margin-bottom: 1em;
+}
+blockquote {
+  font-style: italic;
+  color: #1a5dab;
+  margin: 1.5em 0;
+  padding-left: 1em;
+  border-left: 3px solid #1a5dab;
+}
+
+/* Contact info */
+.contact-info {
+  text-align: center;
+  font-size: 1.1em;
+}
+.contact-info .icon {
+  margin-right: 0.5em;
+}
+
+/* Footer */
+footer {
+  background: #f0f4fa;
+  padding: 2em 1em 1em 1em;
+  text-align: center;
+  font-size: 0.95em;
+  color: #555;
+  margin-top: 2em;
+}
+.footer-content p {
+  margin-bottom: 0.3em;
+}
+
+/* Subpage header */
+.subpage-header {
+  background-image: url('images/waveBackground.svg');
+  background-size: cover;
+  background-position: bottom;
+  padding: 1.5em 1em 1em 1em;
+  text-align: center;
+  position: relative;
+  overflow: visible;
+}
+.wavy-bg {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 60px;
+  z-index: 1;
+  pointer-events: none;
+  display: block;
+}
+
+.subpage-header h1 {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+.back-btn {
+  position: absolute;
+  left: 1em;
+  top: 1.5em;
+  color: #1a5dab;
+  font-size: 1.1em;
+}
+
+/* Responsive styles */
+@media (min-width: 700px) {
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2em 0;
+  }
+  section {
+    display: flex;
+    align-items: center;
+    padding: 2em 2.5em;
+    margin-bottom: 2.5em;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    background: #E5EEF6;
+  }
+  .about-img, .lessons-img, .contact-img, .about-story-img, .about-piano-img, .lessons-detail-img, .lessons-feelgood-img, .about3-img {
+    width: 45%;
+    max-width: 400px;
+    margin: 0 2em 0 0;
+    border-radius: 0;
+  }
+  .about-text, .lessons-text, .about-story-text, .lessons-detail-text {
+    width: 55%;
+    margin: 0;
+  }
+  .about-preview, .lessons-preview, .about-story, .lessons-details {
+    flex-direction: row;
+  }
+  .about-preview img, .lessons-preview img, .about-story img, .lessons-details img {
+    order: 1;
+  }
+  .about-preview .about-text, .lessons-preview .lessons-text, .about-story .about-story-text, .lessons-details .lessons-detail-text {
+    order: 2;
+  }
+} 
+
+/* Hamburger menu overlay and slide-in */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.3);
+  z-index: 15;
+  transition: opacity 0.3s;
+}
+.navbar.open ~ .menu-overlay,
+.hero .navbar.open ~ .menu-overlay {
+  display: block;
+  opacity: 1;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 60vw;
+  max-width: 340px;
+  background: rgba(229,238,246,0.98);
+  box-shadow: -2px 0 16px rgba(0,0,0,0.10);
+  z-index: 20;
+  padding-top: 5em;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(.77,0,.18,1);
+}
+.navbar.open .menu {
+  display: flex;
+  transform: translateX(0);
+}
+.menu a {
+  font-size: 1.3em;
+  color: #1a5dab;
+  padding: 1.2em 2em;
+  border: none;
+  background: none;
+  text-align: left;
+  margin-bottom: 0.5em;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.3s 0.1s, transform 0.3s 0.1s;
+}
+.navbar.open .menu a {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.2s;
+}
+.menu a:last-child {
+  margin-bottom: 0;
+}
+.menu-toggle {
+  z-index: 30;
+}
+.menu-icon {
+  width: 2em;
+  height: 0.2em;
+  background: #fff;
+  display: block;
+  position: relative;
+  transition: background 0.3s;
+}
+.menu-icon::before,
+.menu-icon::after {
+  content: '';
+  position: absolute;
+  width: 2em;
+  height: 0.2em;
+  background: #fff;
+  left: 0;
+  transition: transform 0.3s, top 0.3s;
+}
+.menu-icon::before {
+  top: -0.6em;
+}
+.menu-icon::after {
+  top: 0.6em;
+}
+.navbar.open .menu-icon {
+  background: transparent;
+}
+.navbar.open .menu-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+.navbar.open .menu-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+@media (min-width: 700px) {
+  .menu {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: none;
+    box-shadow: none;
+    width: auto;
+    height: auto;
+    max-width: none;
+    transform: none !important;
+    padding-top: 0;
+  }
+  .menu a {
+    opacity: 1 !important;
+    transform: none !important;
+    font-size: 1em;
+    padding: 0 1.2em;
+    margin-bottom: 0;
+    color: #1a5dab;
+    font-weight: 500;
+  }
+  .menu-overlay {
+    display: none !important;
+  }
+  .menu-toggle {
+    display: none;
+  }
+}
