@@ -2,6 +2,9 @@
 
 :root {
   --heading-color: #1D384A;
+  --backgroundOne: #C0D5E8;
+  --backgroundTwo: #FFFFFF;
+  --backgroundThree: #C0D5E8;
 }
 
 
@@ -10,6 +13,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+html, body {
+  overflow-x: hidden;
 }
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -40,14 +46,22 @@ h1, h2, h3 {
   color: var(--heading-color);
 }
 
+h1 {
+  color: var(--backgroundTwo);
+}
+
 .btn {
-  display: inline-block;
+  display: block;
+  width: fit-content;
+  min-width: 120px;
+  margin: 1em auto 0 auto;
+  padding: 0.5em 1.2em;
+  font-size: 1em;
+  text-align: center;
   background: linear-gradient(90deg, #0071B8 0%, #002DB9 100%);
   color: #fff;
-  padding: 0.5em 1.2em;
   border-radius: 4px;
   margin-top: 1em;
-  font-size: 1em;
   transition: background 0.2s;
 }
 
@@ -144,30 +158,38 @@ section {
   width: 100%;
   border-radius: 0;
   box-shadow: none;
-  padding: 1.5em; /* Add horizontal padding */
+  padding: 1.5em;
+  text-align: center;
 }
 section h2 {
-  font-size: 1.3em;
+  font-size: 1.8em;
   margin-bottom: 1em;
   font-weight: 600;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
 }
-.about-img, .lessons-img, .contact-img, .about-story-img, .about-piano-img, .lessons-detail-img, .lessons-feelgood-img, .about3-img {
+
+section p {
+  text-align: left;
+}
+
+
+.about-img, .lessons-img, .about-story-img, .about-piano-img, .lessons-detail-img, .lessons-feelgood-img, .about3-img {
   width: 100%;
   max-width: 320px;
   border-radius: 0;
   margin: 0 auto 1em auto;
   display: block;
 }
+
+.contact-img {
+  padding: .5em;
+}
 .about-text, .lessons-text, .contact-info, .about-story-text, .lessons-detail-text {
   margin-bottom: 1em;
 }
-blockquote {
-  font-style: italic;
-  color: #1a5dab;
-  margin: 1.5em 0;
-  padding-left: 1em;
-  border-left: 3px solid #1a5dab;
-}
+
 
 /* Contact info */
 .contact-info {
@@ -185,7 +207,6 @@ footer {
   text-align: center;
   font-size: 0.95em;
   color: #555;
-  margin-top: 2em;
 }
 .footer-content p {
   margin-bottom: 0.3em;
@@ -194,13 +215,16 @@ footer {
 /* Subpage header */
 .subpage-header {
   background-image: url('images/waveBackground.svg');
-  background-size: cover;
-  background-position: bottom;
-  padding: 1.5em 1em 1em 1em;
+  background-size: 100% 60px;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  padding: 1.5em 1em 0 1em;
   text-align: center;
   position: relative;
   overflow: visible;
+  min-height: 250px;
 }
+
 .wavy-bg {
   position: absolute;
   left: 0;
@@ -215,6 +239,8 @@ footer {
 .subpage-header h1 {
   font-size: 1.5em;
   font-weight: 700;
+  color: var(--heading-color);
+  padding: .5em;
 }
 .back-btn {
   position: absolute;
@@ -224,41 +250,163 @@ footer {
   font-size: 1.1em;
 }
 
+.contact-preview p {
+  display: inline-block;
+}
+
+
+.contact-preview {
+  background-color: var(--backgroundThree);
+}
+
+.about-preview {
+  background-color: var(--backgroundTwo);
+}
+
+
 /* Responsive styles */
 @media (min-width: 700px) {
   main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2em 0;
+    width: 100vw;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
   }
   section {
-    display: flex;
+    width: 100vw;
+    max-width: none;
+    margin: 0;
+    padding: 0 4vw 2.5em 4vw;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "heading heading"
+      "img text";
     align-items: center;
-    padding: 2em 2.5em;
-    margin-bottom: 2.5em;
-    width: 100%;
+    background: #E5EEF6;
     border-radius: 0;
     box-shadow: none;
-    background: #E5EEF6;
+    overflow-x: hidden;
   }
-  .about-img, .lessons-img, .contact-img, .about-story-img, .about-piano-img, .lessons-detail-img, .lessons-feelgood-img, .about3-img {
-    width: 45%;
-    max-width: 400px;
-    margin: 0 2em 0 0;
-    border-radius: 0;
+  section h2 {
+    grid-area: heading;
+    justify-self: center;
+    align-self: start;
+    font-size: 2em;
+    margin: 1.5em 0 1em 0;
+    font-weight: 700;
+    text-align: center;
   }
-  .about-text, .lessons-text, .about-story-text, .lessons-detail-text {
-    width: 55%;
+  section p {
+    padding-right: 2vw;
+  }
+
+  .btn {
     margin: 0;
   }
-  .about-preview, .lessons-preview, .about-story, .lessons-details {
-    flex-direction: row;
+  
+  .about-img, .lessons-img, .contact-img, .about-story-img, .about-piano-img, .lessons-detail-img, .lessons-feelgood-img, .about3-img {
+    grid-area: img;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 0;
+    justify-self: center;
   }
-  .about-preview img, .lessons-preview img, .about-story img, .lessons-details img {
-    order: 1;
+  .about-text, .lessons-text, .about-story-text, .lessons-detail-text {
+    grid-area: text;
+    width: 100%;
+    margin: 0;
+    justify-self: center;
   }
-  .about-preview .about-text, .lessons-preview .lessons-text, .about-story .about-story-text, .lessons-details .lessons-detail-text {
-    order: 2;
+  /* Alternate image/text positions for even sections */
+  section:nth-child(even) {
+    grid-template-areas:
+      "heading heading"
+      "text img";
+  }
+  section:nth-child(even) .about-img,
+  section:nth-child(even) .lessons-img,
+  section:nth-child(even) .contact-img,
+  section:nth-child(even) .about-story-img,
+  section:nth-child(even) .about-piano-img,
+  section:nth-child(even) .lessons-detail-img,
+  section:nth-child(even) .lessons-feelgood-img,
+  section:nth-child(even) .about3-img {
+    grid-area: img;
+  }
+  section:nth-child(even) .about-text,
+  section:nth-child(even) .lessons-text,
+  section:nth-child(even) .about-story-text,
+  section:nth-child(even) .lessons-detail-text {
+    grid-area: text;
+  }
+  section.contact-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    max-width: none;
+    padding: 2em 0;
+    box-sizing: border-box;
+    background: var(--backgroundThree);
+  }
+  section.contact-preview h2 {
+    width: 100%;
+    text-align: center;
+    margin: 1.5em 0 1em 0;
+    font-size: 2em;
+    font-weight: 700;
+    align-self: center;
+    justify-self: center;
+  }
+  section.contact-preview img {
+    max-width: 220px;
+    margin-bottom: 1em;
+  }
+  section.contact-preview .contact-info {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  section.contact-preview .btn {
+    margin-top: 1em;
+    margin-bottom: 0;
+  }
+  /* Button below text for 'A Lifetime in Music' section */
+  .about-preview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "heading heading"
+      "img text";
+    align-items: center;
+  }
+  .about-preview h2 {
+    grid-area: heading;
+  }
+  .about-img {
+    grid-area: img;
+  }
+  .about-text {
+    grid-area: text;
+    margin-bottom: 0.5em;
+  }
+  .about-preview .btn {
+    grid-area: text;
+    margin: 1em 0 0 0;
+    align-self: flex-end;
+    justify-self: flex-start;
+    padding-left: 2vw;
+  }
+
+  .subpage-header {
+    background-image: url('images/wavedesktop.svg');
+    background-size: unset;
   }
 } 
 
@@ -357,6 +505,11 @@ footer {
 .navbar.open .menu-icon::after {
   transform: rotate(-45deg);
   top: 0;
+}
+.subpage .menu-icon,
+.subpage .menu-icon::before,
+.subpage .menu-icon::after {
+  background: var(--heading-color);
 }
 @media (min-width: 700px) {
   .menu {
