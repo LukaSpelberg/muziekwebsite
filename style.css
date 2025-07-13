@@ -479,6 +479,56 @@ footer {
   position: relative;
   transition: background 0.3s;
 }
+.language-switcher {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  margin-left: 1em;
+}
+
+/* On mobile, language switcher only inside hamburger menu */
+@media (max-width: 699px) {
+  .language-switcher {
+    width: 100%;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0 2.5em;
+  }
+  .lang-btn {
+    text-align: left;
+    font-size: 1.3em;
+    border-radius: 0;
+    padding: 1.2em 0;
+    margin: 0;
+  }
+  .navbar.open .lang-btn {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.2s;
+  }
+  .lang-btn.active {
+    background: #1a5dab;
+    color: #fff;
+  }
+}
+/* Desktop style for language buttons */
+.lang-btn {
+  background: #E5EEF6;
+  color: #1a5dab;
+  border: 1px solid #1a5dab;
+  border-radius: 3px;
+  padding: 0.3em 0.8em;
+  font-size: 1em;
+  cursor: pointer;
+  font-family: "Figtree", sans-serif;
+  transition: background 0.2s, color 0.2s;
+  margin: 0 0.1em;
+  display: inline-block;
+}
+.lang-btn.active {
+  background: #1a5dab;
+  color: #fff;
+}
 .menu-icon::before,
 .menu-icon::after {
   content: '';
@@ -523,6 +573,7 @@ footer {
     max-width: none;
     transform: none !important;
     padding-top: 0;
+    align-items: center;
   }
   .menu a {
     opacity: 1 !important;
@@ -532,6 +583,7 @@ footer {
     margin-bottom: 0;
     color: #1a5dab;
     font-weight: 500;
+    display: inline-block;
   }
   .menu-overlay {
     display: none !important;
