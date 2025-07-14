@@ -207,3 +207,51 @@ function updateLessonsPageLang(lang) {
   const feelgoodText = document.querySelector('.lessons-feelgood p');
   if (feelgoodText) feelgoodText.textContent = t.feelgood;
 }
+
+// Carousel functionality for about and lessons previews
+function startCarousel(carouselSelector) {
+  const carousel = document.querySelector(carouselSelector);
+  if (!carousel) return;
+  const images = carousel.querySelectorAll('.carousel-img');
+  const progressBar = carousel.querySelector('.carousel-progress-bar');
+  let current = 0;
+  let intervalId;
+  if (images.length < 2) return;
+
+  function showImage(idx) {
+    images.forEach((img, i) => {
+      img.classList.toggle('active', i === idx);
+    });
+    if (progressBar) {
+      progressBar.style.transition = 'none';
+      progressBar.style.width = '0%';
+      // Force reflow for transition restart
+      void progressBar.offsetWidth;
+      progressBar.style.transition = 'width 10s linear';
+      progressBar.style.width = '100%';
+    }
+  }
+
+  function nextImage() {
+    current = (current + 1) % images.length;
+    showImage(current);
+  }
+
+  showImage(current);
+  if (progressBar) {
+    progressBar.style.width = '100%';
+    progressBar.style.transition = 'width 10s linear';
+  }
+  intervalId = setInterval(nextImage, 10000);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  updateAboutPageLang(currentLang);
+  updateIndexPageLang(currentLang);
+  updateLessonsPageLang(currentLang);
+  document.documentElement.lang = currentLang;
+  // Start all carousels on the page
+  document.querySelectorAll('.carousel').forEach(carousel => {
+    startCarousel('.' + Array.from(carousel.classList).join('.'));
+  });
+});

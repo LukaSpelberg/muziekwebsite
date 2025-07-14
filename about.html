@@ -15,7 +15,6 @@
 <body class="subpage">
   <header class="subpage-header">
     <nav class="navbar">
-      <a href="index.html" class="back-btn">&larr; Home</a>
       <button class="menu-toggle" aria-label="Open menu">
         <span class="menu-icon"></span>
       </button>
@@ -23,17 +22,23 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="lessons.html">Lessons</a>
-      </div>
-      <div class="language-switcher">
-        <button data-lang="nl" class="lang-btn">NL</button>
-        <button data-lang="en" class="lang-btn">EN</button>
+        <div class="language-switcher">
+          <button data-lang="nl" class="lang-btn">NL</button>
+          <button data-lang="en" class="lang-btn">EN</button>
+        </div>
       </div>
     </nav>
     <h1>A Lifetime in Music</h1>
   </header>
   <main>
     <section class="about-story">
-      <img src="images/aliciaOudefoto.png" alt="Alicia playing violin" class="about-story-img">
+      <div class="carousel about-story-carousel">
+        <img src="images/aliciaOudefoto.png" alt="Alicia playing violin" class="about-story-img carousel-img active">
+        <img src="images/oudeFoto2.jpg" alt="Alicia selfie" class="about-story-img carousel-img">
+        <img src="images/oudeFoto3.jpg" alt="Alicia playing violin" class="about-story-img carousel-img active">
+        <img src="images/oudeFoto4.jpg" alt="Old photo of alicia." class="about-story-img carousel-img active">
+        <div class="carousel-progress"><div class="carousel-progress-bar"></div></div>
+      </div>
       <div class="about-story-text">
         <p>Alicia Spelberg was born into a musical family. Music played already for generations a leading role. Alicia
           was left with an impressive collection of music books and precious experiences with her family members and
@@ -46,7 +51,12 @@
     </section>
     <section class="about-philosophy">
       <h2>Music lessons from 1989, 35+ years!</h2>
-      <img src="images/pianoConcert.png" alt="Alicia at piano" class="about-piano-img">
+      <div class="carousel about-philosophy-carousel">
+        <img src="images/mooiUitzicht.jpg" alt="view of the lesson room" class="about-piano-img carousel-img active">
+        <img src="images/pianoConcert.png" alt="Alicia at piano" class="about-piano-img carousel-img active">
+        <img src="images/viool.jpg" alt="picture of a violin" class="about-piano-img carousel-img">
+        <div class="carousel-progress"><div class="carousel-progress-bar"></div></div>
+      </div>
       <p>Already at a very young age she started giving music lessons, founding her praxis in 1989. Quickly she
         developed her skills not only in giving violin lessons, but also in piano, viola, quartet, music theory and
         arranging music.
@@ -56,7 +66,12 @@
     </section>
     <section class="about3">
       <h2>“Her philosophy to give them music for the whole life”</h2>
-      <img src="images/leerlingOptreden.png" alt="leerlingoptreden" class="about3-img">
+      <div class="carousel about3-carousel">
+        <img src="images/leerlingOptreden.png" alt="Student performance" class="about3-img carousel-img active">
+        <img src="images/tekeningLes.jpg" alt="drawing of student in lesson" class="about3-img carousel-img">
+        <img src="images/leerlingPiano.jpg" alt="student performance from top down." class="about3-img carousel-img">
+        <div class="carousel-progress"><div class="carousel-progress-bar"></div></div>
+      </div>
       <p>After her extensive internship with Manja de Waart at Muziekschool Amsterdam at de Bachstraat, she worked some
         years there and in Zaandam with large groups of pupils. Her own praxis consistently grew from a part time to a
         fulltime job, always combining it with performing in small ensembles.
@@ -76,6 +91,8 @@
       <p>Tel: +31 6 20233379</p>
       <p>Amstel 139, 1080EN, Amsterdam</p>
       <p>&copy; 2025 Muziekpraktijk Alicia Spelberg. KvK: 34372525</p>
+      <p>Lid Kunstenbond FNV</p>
+      <p>Website by <a href="https://lukaspelberg.nl" target="_blank">Luka Spelberg</a></p>
     </div>
   </footer>
   <script src="script.js"></script>
